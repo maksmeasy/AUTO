@@ -3,6 +3,24 @@ body {
   font-family: Manrope, sans-serif;
   color: #1e1b1b;
 }
+h1 {
+  font-weight: 800;
+  font-size: 64px;
+  line-height: 84px;
+  letter-spacing: -0.03em;
+}
+h2 {
+  font-weight: 800;
+  font-size: 58px;
+  line-height: 76px;
+  letter-spacing: -0.03em;
+}
+h3 {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 48px;
+  letter-spacing: -0.03em;
+}
 .wrapper {
   min-height: 100%;
   overflow: hidden;
@@ -17,6 +35,9 @@ body {
 }
 .main__offer {
   padding: 128px 0;
+}
+.main__process-section {
+  padding: 134px 0;
 }
 .main__blog {
   padding: 136px 0;
@@ -85,8 +106,10 @@ body {
 }
 .header__nav-link {
   white-space: nowrap;
+  transition: 0.6s;
 }
-.header__nav-link:hover {
+.header__nav-link:hover,
+.header__nav-link:focus {
   color: #ff6433;
   transition: 0.3s;
 }
@@ -131,10 +154,6 @@ body {
   margin-right: 51px;
 }
 .header__title {
-  font-weight: 800;
-  font-size: 64px;
-  line-height: 84px;
-  letter-spacing: -0.03em;
   margin-bottom: 32px;
 }
 .header__content-buttons {
@@ -282,20 +301,16 @@ body {
 .offer__heading h2 {
   max-width: 858px;
 }
-.heading__subtitle {
+.offer__heading-subtitle {
   font-weight: 600;
   font-size: 24px;
   line-height: 36px;
   letter-spacing: -0.03em;
   margin-bottom: 8px;
 }
-.heading__title {
-  font-weight: 800;
-  font-size: 58px;
-  line-height: 76px;
-  letter-spacing: -0.03em;
+.offer__heading-title {
 }
-.heading__title--text-center {
+.offer__heading-title--text-center {
   text-align: center;
 }
 .offer__grid {
@@ -361,6 +376,69 @@ body {
 }
 /* =============== /OFFER =============== */
 
+/* =============== PROCESS-SECTION =============== */
+.process-section__inner {
+  display: flex;
+}
+.process__left {
+  max-width: 524px;
+  margin-right: 131px;
+}
+.process__left-title {
+  margin-bottom: 16px;
+}
+.process__left-text {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 28px;
+  color: rgb(30, 27, 27, 0.6);
+  max-width: 437px;
+  margin-bottom: 32px;
+}
+.process__right {
+  display: flex;
+}
+.process__right-step {
+  margin-bottom: 16px;
+}
+.process__right-step:last-child {
+  margin-bottom: 0px;
+}
+.process__right-icons {
+  display: flex;
+  flex-direction: column;
+  margin-right: 24px;
+}
+.process__step-icon {
+  display: flex;
+  flex-direction: column;
+}
+.process__step-icon::after {
+  content: "";
+  height: 0px;
+  width: 71px;
+  margin: 54px 0px 54px 1px;
+  border-bottom: 2px dashed #ff6433;
+  transform: rotate(90deg);
+}
+.process__step-icon:last-child:after {
+  content: none;
+}
+.process__step-content {
+  max-width: 336px;
+  padding-top: 13px;
+}
+.process__step-heading {
+  margin-bottom: 8px;
+}
+.process__step-text {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 32px;
+  color: rgb(30, 27, 27, 0.6);
+}
+/* =============== /PROCESS-SECTION =============== */
+
 /* =============== BLOG =============== */
 .blog {
 }
@@ -373,21 +451,30 @@ body {
 }
 .blog__body {
 }
-.blog__sort-box {
+.blog__filter-box {
   display: flex;
   margin-bottom: 46px;
 }
-.blog__sort-item {
+.blog__filter-item {
   margin-right: 30px;
 }
-.blog__sort-item:last-child {
+.blog__filter-item:last-child {
   margin-right: 0;
 }
-.blog__sort-btn {
+.blog__filter-btn {
   font-weight: 700;
   font-size: 32px;
   line-height: 48px;
   letter-spacing: -0.03em;
+  background-color: transparent;
+  transition: all 0.6s;
+}
+.blog__filter-btn:hover {
+  color: #ff6433;
+  transition: all 0.3s;
+}
+.blog__filter-btn--active {
+  color: #ff6433;
 }
 .blog__list {
   display: grid;
@@ -398,12 +485,25 @@ body {
 .blog__list-item {
 }
 .blog__list-link {
+  position: relative;
   display: block;
-  transition: 0.6s;
+  transition: 0.7s;
 }
-.blog__list-link:hover {
-  transform: scale(1.02);
+.blog__list-link::after {
+  position: absolute;
+  display: block;
+  content: "";
+  height: 2px;
+  width: 0%;
+  bottom: -15px;
+  background-color: #ff6433;
+  transition: width 0.4s ease-in-out;
+}
+.blog__list-link:hover,
+.blog__list-link:hover::after {
+  transform: scale(1.03);
   transition: 0.3s;
+  width: 100%;
 }
 .blog__list-link h3 {
   transition: all 0.6s;
@@ -427,10 +527,6 @@ body {
   margin-bottom: 16px;
 }
 .blog__list-heading {
-  font-weight: 700;
-  font-size: 32px;
-  line-height: 48px;
-  letter-spacing: -0.03em;
   margin-bottom: 16px;
 }
 .blog__list-text {
