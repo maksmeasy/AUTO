@@ -24,8 +24,8 @@ $(function () {
         isFinite: true,
         draggable: false,
         waitForAnimate: false,
-
-
+        dots: true,
+        appendDots: ('.testimonials__slider-dots'),
     })
 
     $('.testimonials__slider-perv').on('click', function (e) {
