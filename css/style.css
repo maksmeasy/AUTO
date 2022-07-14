@@ -60,6 +60,15 @@ h4 {
 .main__testimonials {
   padding: 128px 0;
 }
+.main__questions {
+  padding: 128px 0;
+}
+.main__commun {
+  padding-top: 121px;
+  padding-bottom: 178px;
+}
+.main__map {
+}
 .logo {
   transition: all 0.3s;
 }
@@ -90,7 +99,7 @@ h4 {
 .header {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  /* height: 100vh; */
 }
 .header__wrapper {
   display: flex;
@@ -147,10 +156,12 @@ h4 {
 .header__assistance svg {
   margin-right: 14px;
   border-radius: 50%;
-  transition: 0.3s;
+  transition: 0.6s;
 }
 .header__assistance:hover svg {
   box-shadow: 0 0 0 10px rgba(96, 195, 160, 0.199);
+  transform: scale(1.05);
+  transition: 0.3s;
 }
 .header__assist-text {
   line-height: 24px;
@@ -311,6 +322,9 @@ h4 {
   background-color: #f2f2f2;
   width: 100%;
 }
+.offer__heading {
+  margin-bottom: 64px;
+}
 .offer__heading h2 {
   max-width: 858px;
 }
@@ -325,7 +339,6 @@ h4 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 64px;
   text-align: center;
 }
 .offer__grid {
@@ -457,9 +470,6 @@ h4 {
 /* =============== CTA =============== */
 .cta {
   position: relative;
-}
-.container .cta__background {
-  margin: 0 0;
 }
 .cta__inner {
 }
@@ -658,6 +668,7 @@ h4 {
 .testimonials__inner {
 }
 .testimonials__heading {
+  margin-bottom: 76px;
 }
 .testimonials__heading h2 {
   max-width: 909px;
@@ -794,6 +805,226 @@ h4 {
   transition: all 0.3s;
 }
 /* =============== /TESTIMONIALS =============== */
+
+/* =============== QUESTIONS =============== */
+.questions {
+}
+.questions__inner {
+}
+.questions__heading {
+  margin-bottom: 86px;
+}
+.questions__heading-title {
+}
+.questions__accord {
+  max-width: 896px;
+  margin: 0 auto;
+}
+.questions__accord-item {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 12px;
+  background-color: #fff;
+}
+.questions__accord-link {
+  display: block;
+  padding: 32px 40px;
+}
+.questions__accord-link--active {
+}
+.questions__accord-item:last-child {
+  margin-bottom: 0;
+}
+.questions__accord-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.questions__accord-title {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 36px;
+  letter-spacing: -0.03em;
+}
+.questions__accord-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 48px;
+  height: 48px;
+  background-color: #ff6433;
+  margin-left: 30px;
+}
+.questions__accord-button::before,
+.questions__accord-button::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 18px;
+  background-color: #fff;
+  border-radius: 2px;
+}
+.questions__accord-button::after {
+  transform: rotate(90deg);
+  transition: all 0.3s;
+}
+.questions__accord-link--active .questions__accord-button::after {
+  transform: rotate(0deg);
+}
+.questions__accord-text {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 175%;
+  color: #939191;
+  margin-top: 12px;
+  margin-right: 114px;
+}
+/* =============== /QUESTIONS =============== */
+
+/* =============== MAP =============== */
+.map {
+}
+
+.map__inner {
+}
+.map__map {
+  height: 512px;
+  width: 100%;
+  margin-bottom: -168px;
+}
+.map__background {
+}
+.map__bg-image {
+  display: block;
+  background: url(../images/footer/1.jpg) no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  width: 100%;
+  height: 448px;
+}
+/* =============== /MAP =============== */
+
+/* =============== COMMUNICATION =============== */
+
+.commun {
+}
+.commun__inner {
+}
+.commun__heading {
+  margin-bottom: 48px;
+}
+.commun__heading h1 {
+  max-width: 505px;
+}
+.commun__heading-title {
+}
+.commun__content {
+  display: flex;
+  justify-content: space-between;
+}
+.commun__form {
+  display: flex;
+  flex-direction: column;
+  max-width: 624px;
+  flex: 1 1 auto;
+  margin-right: 32px;
+}
+.commun__form-input {
+  display: block;
+  border-radius: 2px;
+  background-color: #f2f2f2;
+  padding: 23px 40px;
+  margin-bottom: 4px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 28px;
+  color: #1e1b1b;
+}
+.commun__form-input::placeholder {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 28px;
+  color: #1e1b1b;
+}
+.commun__form-input:nth-child(4) {
+  margin-bottom: 0;
+}
+.commun__form-lable {
+  display: flex;
+  margin-top: 32px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 28px;
+  color: #1e1b1b;
+}
+.commun__form-checkbox {
+  position: relative;
+  width: 16px;
+  height: 16px;
+  flex: 0 0 auto;
+  margin-top: 6px;
+  margin-right: 15px;
+}
+.commun__form-default {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+.commun__form-default:checked + .commun__form-custom {
+  background: url(../images/form/checked.svg) 50% 50% no-repeat, #ff6433;
+  border-radius: 2px;
+}
+.commun__form-custom {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 1px solid #000;
+  border-radius: 2px;
+  cursor: pointer;
+}
+.commun__form-btn {
+  max-width: 206px;
+  margin-top: 48px;
+}
+.commun__contacts {
+  padding-right: 36px;
+}
+.commun__contacts-item {
+  margin-bottom: 32px;
+}
+.commun__contacts-item:last-child {
+  margin-bottom: 0;
+}
+.commun__item-top {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 28px;
+  opacity: 0.7;
+  margin-bottom: 2px;
+}
+.commun__item-text {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 36px;
+  letter-spacing: -0.03em;
+}
+.commun__item-link {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 36px;
+  letter-spacing: -0.03em;
+  transition: all 0.6s;
+}
+.commun__item-link:hover {
+  color: #ff6433;
+  transition: all 0.3s;
+}
+/* =============== /COMMUNICATION =============== */
 /* =============== /MAIN =============== */
 
 /* =============== FOOTER =============== */
