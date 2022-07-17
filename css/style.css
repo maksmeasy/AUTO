@@ -33,8 +33,9 @@ h4 {
   width: 100%;
 }
 .container {
-  max-width: 1280px;
+  max-width: 1360px;
   margin: 0 auto;
+  padding: 0 40px;
   height: 100%;
 }
 .main {
@@ -70,10 +71,11 @@ h4 {
 .main__map {
 }
 .logo {
-  transition: all 0.3s;
+  transition: all 0.6s;
 }
 .logo:hover {
   fill: #ff6433;
+  transition: all 0.3s;
 }
 .button {
   display: inline-block;
@@ -142,8 +144,7 @@ h4 {
   white-space: nowrap;
   transition: 0.6s;
 }
-.header__nav-link:hover,
-.header__nav-link:focus {
+.header__nav-link:hover {
   color: #ff6433;
   transition: 0.3s;
 }
@@ -186,10 +187,11 @@ h4 {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
 }
 .header__body-content {
-  max-width: 624px;
-  margin-right: 51px;
+  max-width: 580px;
+  margin-right: auto;
 }
 .header__title {
   margin-bottom: 32px;
@@ -267,17 +269,14 @@ h4 {
 }
 .header__rating {
   position: absolute;
-  top: 460px;
-  right: -20px;
+  bottom: 70px;
+  right: 0px;
+  margin-right: -20px;
   display: inline-flex;
   align-items: center;
   border-radius: 59px;
   background: #ffffff;
-  /* border: 12px solid rgba(225, 225, 225, 0.637); */
   box-shadow: 0 0 0 12px rgba(225, 225, 225, 0.43);
-  font-weight: 600;
-  font-size: 24px;
-  line-height: 30px;
   padding: 24px 32px 24px 38px;
 }
 .header__rating-box {
@@ -285,6 +284,11 @@ h4 {
 }
 .header__rating-value {
   display: inline-flex;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 30px;
+  letter-spacing: -0.03em;
+  color: #000000;
 }
 .header__rating-text {
   font-weight: 500;
@@ -1028,5 +1032,146 @@ h4 {
 /* =============== /MAIN =============== */
 
 /* =============== FOOTER =============== */
-
+.footer {
+  color: #ffffff;
+}
+.footer__top {
+  background-color: #222020;
+  padding: 128px 0;
+}
+.footer__top-inner {
+  display: flex;
+}
+.footer__top-left {
+  margin-right: 193px;
+}
+.footer__heading {
+  margin-bottom: 64px;
+}
+.footer__heading h4 {
+  max-width: 463px;
+}
+.footer__heading-title {
+}
+.footer__socials-list {
+  display: flex;
+  gap: 24px;
+}
+.footer__socials-item {
+}
+.footer__socials-link {
+}
+.footer__socials-link path {
+  transition: all 0.6s;
+}
+.footer__socials-link:hover path {
+  fill: #ff6433;
+  transition: all 0.3s;
+}
+.footer__socials-link svg {
+  transition: all 0.6s;
+}
+.footer__socials-link:hover svg {
+  transform: scale(1.2);
+  transition: all 0.3s;
+}
+.footer__top-right {
+}
+.footer__contacts {
+}
+.footer__contacts-item {
+}
+.footer__item-top {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 32px;
+  opacity: 0.6;
+  margin-bottom: 8px;
+}
+.footer__item-link {
+  display: inline-block;
+  margin-bottom: 32px;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 36px;
+  letter-spacing: -0.03em;
+  transition: all 0.6s;
+}
+.footer__item-link:hover {
+  color: #ff6433;
+  transition: all 0.3s;
+}
+.footer__item-text {
+  margin-bottom: 32px;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 36px;
+  letter-spacing: -0.03em;
+}
+.footer__bottom {
+  background-color: #1e1b1b;
+  padding: 65px 0;
+}
+.footer__bottom-inner {
+  display: flex;
+  align-items: center;
+}
+.footer__logo {
+  margin-right: auto;
+}
+.footer__logo path {
+  transition: all 0.6s;
+}
+.footer__logo:hover path {
+  fill: #ff6433;
+  transition: all 0.3s;
+}
+.footer__nav {
+  margin-right: 206px;
+}
+.footer__nav-list {
+  display: flex;
+}
+.footer__nav-item {
+  margin-right: 40px;
+}
+.footer__nav-item:last-child {
+  margin-right: 0;
+}
+.footer__nav-link {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 28px;
+  white-space: nowrap;
+  transition: 0.6s;
+}
+.footer__nav-link:hover {
+  color: #ff6433;
+  transition: 0.3s;
+}
+.footer__copy {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 28px;
+  color: #939191;
+}
 /* =============== /FOOTER =============== */
+
+/* =============== ADAPTIVE =============== */
+/* @media (max-width: 1370px) {
+  .header__body-image {
+    height: 536px;
+    width: 560px;
+  }
+}
+@media (max-width: 1280px) {
+  .header__body-image {
+    height: 478px;
+    width: 500px;
+  }
+  .header__body-content {
+    margin-right: 65px;
+  }
+} */
+
+/* =============== /ADAPTIVE =============== */
