@@ -1337,6 +1337,9 @@ h4 {
 
 /* ---------- 850 ---------- */
 @media (max-width: 850px) {
+  .header__body {
+    padding: 120px 0 120px;
+  }
   .header__body-content {
     max-width: 430px;
     margin-right: 0;
