@@ -1,128 +1,150 @@
-$(function () {
-    
-    // --------------- HEADER ---------------
-    // --------------- HEADER ---------------
+// ===================== PARALLAX =====================
 
-    $(".header__rateYo").rateYo({
-        fullStar: true,
-        rating: 4.5,
-        spacing: "3px",
-        normalFill: "#D7D1C7",
-        ratedFill: "#FFB648",
-        numStars: 5,
-        readOnly: true,
-        starSvg : '<svg width="30" height="28" viewBox="0 0 30 28" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M12.3662 1.82936C13.5032 -0.255461 16.4968 -0.255466 17.6338 1.82936L19.9256 6.03174C20.3571 6.82292 21.1214 7.37822 22.0072 7.5441L26.7121 8.42517C29.0463 8.86228 29.9713 11.7093 28.3399 13.4349L25.0514 16.9132C24.4323 17.5681 24.1404 18.4666 24.2563 19.3603L24.8723 24.1072C25.1779 26.4621 22.756 28.2217 20.6107 27.2034L16.2865 25.1507C15.4724 24.7642 14.5276 24.7642 13.7135 25.1507L9.38927 27.2034C7.24399 28.2217 4.82214 26.4621 5.12772 24.1072L5.74367 19.3603C5.85964 18.4666 5.5677 17.5681 4.94858 16.9132L1.66009 13.4349C0.0286615 11.7093 0.953722 8.86228 3.28786 8.42517L7.99278 7.5441C8.87858 7.37822 9.64288 6.82293 10.0744 6.03174L12.3662 1.82936Z"/> </svg>'
-    });
+var scene_1 = document.getElementById('scene-1')
+var parallaxInstance = new Parallax(scene_1)
+var scene_2 = document.getElementById('scene-2')
+var parallaxInstance = new Parallax(scene_2)
 
-    // --------------- BLOG ---------------
-    // --------------- BLOG ---------------
+// ===================== WEBINAR =====================
 
-    var mixer = mixitup('.blog__list');
+var swiper = new Swiper('.swiper', {
+  effect: 'coverflow',
+  parallax: true,
+  loop: true,
+  grabCursor: true,
+  centeredSlides: true,
+  slidesPerView: 'auto',
+  coverflowEffect: {
+    rotate: 40,
+    stretch: 118,
+    depth: 349,
+    modifier: 1,
+    slideShadows: false,
+    scale: 0.8
+  }
+})
 
-    $('.blog__filter-btn').on('click', function () {
-        $('.blog__filter-btn').removeClass('blog__filter-btn--active')
-        $(this).addClass('blog__filter-btn--active')
+jQuery(document).ready(function ($) {
+  ;(function initPlayVideo () {
+    // var $videoSlide = $('.swiper-slide')
+    var $videoCover = $('.f-video-cover')
+    // var $videoPlayerIframe = $('.f-video-player iframe')
+
+    $videoCover.on('click', function () {
+      // if ($(this).hasClass('swiper-slide-active')) {
+      //   $('.webinar__slide-img').fadeOut()
+      // }
+      // else {
+
+      // }
+      // $(this).fadeOut()
+      $(this, '.webinar__slide-img').fadeOut()
+      // $(this).src += '?feature=oembed&autoplay=1'
     })
+  })()
+})
 
-    $('.testimonials__slider').slick({
-        arrows: false,
-        slidesToShow: 2,
-        isFinite: true,
-        draggable: false,
-        waitForAnimate: false,
-        dots: true,
-        appendDots: ('.testimonials__slider-dots'),
-        responsive: [
-            {
-                breakpoint: 1000,
-                settings: {
-                    slidesToShow: 1
-                }
-            }
-        ]
-    })
+// $('webinar__slide-wrapper').slick({
+//   swipe: true
+// })
 
-    $('.testimonials__slider-perv').on('click', function (e) {
-        e.preventDefault()
-        $('.testimonials__slider').slick('slickPrev')
-    })
-    $('.testimonials__slider-next').on('click', function (e) {
-        e.preventDefault()
-        $('.testimonials__slider').slick('slickNext')
-    })
-    
-    // --------------- QUESTIONS ---------------
-    // --------------- QUESTIONS ---------------
+// $(function () {
+//   var videos = $('.video')
 
-    // $('.questions__accord-link').on('click', function (e) {
-    //     e.preventDefault()
-    //     $(this).toggleClass('questions__accord-link--active')
-    //     $(this).children('.questions__accord-text').slideToggle()
-    // })
+//   videos.on('click', function () {
+//     var elm = $(this),
+//       conts = elm.contents(),
+//       le = conts.length,
+//       ifr = null
 
-    $('.questions__accord-link').on('click', function (e) {
-        e.preventDefault()
-        if ($(this).hasClass('questions__accord-link--active')) {
-            $(this).removeClass('questions__accord-link--active')
-            $(this).children('.questions__accord-text').slideUp()
-        }
-        else {
-            $('.questions__accord-link').removeClass('questions__accord-link--active')
-            $('.questions__accord-text').slideUp()
-            $(this).addClass('questions__accord-link--active')
-            $(this).children('.questions__accord-text').slideDown()
-        }
-    })
+//     for (var i = 0; i < le; i++) {
+//       if (conts[i].nodeType == 8) ifr = conts[i].textContent
+//     }
 
-    $(".header__nav-list a, .header__content-btn, .cta__btn, .footer__nav-list a").on("click", function (e) {
-        e.preventDefault()
-        var id = $(this).attr('href'),
-        top = $(id).offset().top
-        $('body,html').animate({ scrollTop: top }, 1000)
-    })
-    
-    // --------------- BURGER-MENU ---------------
-    // --------------- BURGER-MENU ---------------
+//     elm.addClass('player').html(ifr)
+//     elm.off('click')
+//   })
+// })
 
-    // $('.header__burge-btn, .overlay').on("click", function (e) {
-    //     e.preventDefault()
-    //     $('.header__top').toggleClass('header__top--open')
-    //     if ($('.header__top').hasClass('header__top--open')) {
-    //         $('.header__burger').removeClass('header__burger--bg')
-    //         $('.overlay').addClass('overlay--show')
-    //     }
-    //     else {
-    //         $('.header__burger').addClass('header__burger--bg')
-    //         $('.overlay').removeClass('overlay--show')
-    //     }
-    // })
+// $(function () {
+//   var videos = $('.YTvideo')
 
-    setInterval(() => {
-        if ($(window).scrollTop() > 0 && $('.header__top').hasClass('header__top--open') === false) {
-        $('.burger').addClass('burger--follow')
-        } else {
-        $('.burger').removeClass('burger--follow')
-        }
-    }, 0);
-    $('.burger, .overlay, .header__top a').on('click',  function(e) {
-        e.preventDefault()
-        $('.header__top').toggleClass('header__top--open')
-        $('.overlay').toggleClass('overlay--show')
-        $('.burger').toggleClass('burger--open')
-    })
+//   $('.YTslider').on('afterChange', function () {
+//     videos.children('iframe').remove()
+//     videos.removeClass('player')
+//   })
 
+//   videos.on('click', function () {
+//     var that = $(this)
 
+//     setTimeout(function () {
+//       var YTid = that.data('yt_id')
+//       that
+//         .addClass('player')
+//         .append(
+//           '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/' +
+//             YTid +
+//             '?autoplay=0" frameborder="0" allowfullscreen></iframe>'
+//         )
+//     }, 400)
+//   })
+// })
 
+// (function ($) {
+//   jQuery(document).ready(function ($) {
+//     swiper.on('transitionEnd', function (swiper) {
+//       var currentSlide, slideType, player, command
+//       currentSlide = $('.webinar__swiper-wrapper').find('.swiper-slide-active')
+//       previousSlide = $('.webinar__swiper-wrapper').find('.swiper-slide-prev')
 
+//       slideType = currentSlide.attr('class').split(' ')[1]
+//       player = currentSlide.find('iframe').get(0)
+//       command = {
+//         event: 'command',
+//         func: 'playVideo'
+//       }
+//       if (player != undefined) {
+//         player.contentWindow.postMessage(JSON.stringify(command), '*')
+//       }
 
+//       slideType = previousSlide.attr('class')
+//       if (slideType != undefined) {
+//         slideType = slideType.split(' ')[1]
+//         player = previousSlide.find('iframe').get(0)
+//         command = {
+//           event: 'command',
+//           func: 'pauseVideo'
+//         }
+//         // If you don't using autoplay you should use "stopVideo" instead of "pauseVideo"
+//         if (player != undefined) {
+//           player.contentWindow.postMessage(JSON.stringify(command), '*')
+//         }
+//       }
+//     })
+//   })
+// })(jQuery)
 
+// --------------- SMOOTH-LINK ---------------
+// --------------- SMOOTH-LINK ---------------
 
+$('.header__nav-list a, .footer__nav-list a, .footer__logo').on(
+  'click',
+  function (e) {
+    e.preventDefault()
+    var id = $(this).attr('href'),
+      top = $(id).offset().top
+    $('body,html').animate({ scrollTop: top }, 1000)
+  }
+)
 
+// --------------- WOW ---------------
+// --------------- WOW ---------------
 
-
-
-
-
-
-
-});
+wow = new WOW({
+  boxClass: 'wow', // default
+  animateClass: 'animated', // default
+  offset: 150,
+  mobile: true, // default
+  live: true // default
+})
+wow.init()
